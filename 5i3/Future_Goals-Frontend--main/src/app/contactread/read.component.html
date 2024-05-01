@@ -1,0 +1,28 @@
+
+<div class="d-block mx-auto w-50">
+    <label for="username">UserName</label>
+    <input type="text" name="username" id="username" class="form-control" [(ngModel)]="username">
+    <div class="d-flex my-2">
+        <input type="submit" value="Get all" class="btn btn-primary" (click)="Read('All')">
+        <input type="submit" [value]="'Get '+ username" class="btn btn-primary mx-1" (click)="Read(username)">
+    </div>
+    <p *ngIf="!(Results.length!=0 && GotResult)" class="text-danger">No Result to Show</p>
+</div>
+<table class="table w-50  mx-auto" *ngIf="Results.length!=0 && GotResult">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">username</th>
+            <th scope="col">suggestion</th>
+            <th scope="col">quires</th>
+            <th scope="col">experience</th>
+            <th scope="col">rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Data of Results">
+            <th scope="row">{{Data[0]}}</th>
+            <td>{{Data[1]}}</td>
+            <td>{{Data[2]}}</td>
+            <td>{{Data[3]}}</td>
+            <td>{{Data[4]}}</td>
+        </tr></tbody></table>

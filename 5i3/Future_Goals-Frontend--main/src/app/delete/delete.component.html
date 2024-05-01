@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a href="#">Courses
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Inter
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a routerLink="/interinsert">insert</a></li>
+						 <li><a routerLink="/interget">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">B.tech
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/btechinsert">insert</a></li>
+					   <li><a routerLink="/btech">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a href="#">PG
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a href="#">insert</a></li>
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				</ul>
+			 </li>
+
+
+
+
+			 <li>
+				<a href="#">Details
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Login
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a href="#">insert</a></li>
+						 <li><a href="#">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">Register
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/registerinsert">insert</a></li>
+					   <li><a routerLink="/registerread">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a href="#">Contact
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a href="#">insert</a></li>
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a routerLink="/feedback">Feedback
+					</a>
+				 </li>
+				</ul>
+			 </li>
+
+
+
+
+
+
+
+			 <li><a routerLink="/qr" >course information</a></li>
+			 <li><a routerLink="/gallery">About</a></li>
+          
+            <li><a routerLink="/main" >Contact</a></li>
+            <li><a routerLink="/create">Feedback</a></li>
+			<li><a routerLink="/profile" >Profile</a></li>
+
+			<li><a routerLink="/main">Logout</a></li>
+         </ul>
+      </nav>
+      <section></section>
+   </body>
+</html>
+<div class="d-block mx-auto w-50">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" class="form-control" [(ngModel)]="username">
+    <div class="d-flex my-2">
+
+        <input type="submit" [value]="'Get '+ username" class="btn btn-primary mx-1" (click)="Read(username)">
+    </div>
+    <p *ngIf="!(Results.length!=0 && GotResult)" class="text-danger">No Result to Show</p>
+</div>
+<table class="table w-50  mx-auto" *ngIf="Results.length!=0 && GotResult">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">UserName</th>
+            <th scope="col">suggestion</th>
+            <th scope="col">quires</th>
+            <th scope="col">experience</th>
+            <th scope="col">Rating</th>
+            
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Data of Results">
+            <th scope="row">{{Data[0]}}</th>
+            <td>{{Data[1]}}</td>
+            <td>{{Data[2]}}</td>
+            <td>{{Data[3]}}</td>
+            <td>{{Data[4]}}</td>
+            <td><input type="button" role="button" class="btn btn-danger" value="delete" (click)="Delete(Data[0])">
+            </td>
+            
+        </tr>
+    </tbody>
+</table>

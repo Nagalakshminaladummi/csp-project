@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a href="#">Courses
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Inter
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a routerLink="/interinsert">insert</a></li>
+						 <li><a routerLink="/interget">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">B.tech
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/btechinsert">insert</a></li>
+					   <li><a routerLink="/btech">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a href="#">PG
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a href="#">insert</a></li>
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				</ul>
+			 </li>
+
+
+
+
+			 <li>
+				<a href="#">Details
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Login
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a href="#">insert</a></li>
+						 <li><a href="#">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">Register
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/registerinsert">insert</a></li>
+					   <li><a routerLink="/registerread">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a href="#">Contact
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a href="#">insert</a></li>
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a routerLink="/feedback">Feedback
+					</a>
+				 </li>
+				</ul>
+			 </li>
+
+
+
+
+
+
+
+			 <li><a href="/future">Course Info</a></li>
+			 <li><a routerLink="/gallery">About</a></li>
+          
+            <li><a routerLink="/main" >Contact</a></li>
+            <li><a routerLink="/create">Feedback</a></li>
+			<li><a routerLink="/profile" >Profile</a></li>
+
+			<li><a routerLink="/main">Logout</a></li>
+         </ul>
+      </nav>
+      <section></section>
+   </body>
+</html>
+<div class="d-block mx-auto w-50"><br>
+    <label for="s_no">username</label>
+    <input type="text" name="s_no" id="s_no" class="form-control" [(ngModel)]="username"
+        placeholder="">
+    <div class="d-flex my-2">
+        <input type="submit" [value]="'Update'" class="btn btn-primary" (click)="Read(username)"></div>
+  
+  
+  
+        <div class="table w-75  mx-auto" *ngIf="Results.length!=0 && GotResult">
+        <div *ngFor="let Data of Results">
+    <div class="form-group w-50 d-block mx-auto" >
+          </div>
+          <div class="modal-body">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" id="username"  class="form-control"  placeholder={{Data[0]}} [(ngModel)]="UpdatedUser.username">
+  
+            <label for="suggestion" class="form-label">Suggestion</label>
+            <input type="text" name="suggestion" id="suggestion" class="form-control"  value="{{Data[1]}}"  [(ngModel)]="UpdatedUser.suggestion">
+  
+            <label for="contact_quires" class="form-label">Quires</label>
+            <input type="text" name="quires" id="quires"  class="form-control" value="{{Data[2]}}" [(ngModel)]="UpdatedUser.quires">
+       
+            <label for="experience" class="form-label">experience</label>
+            <input type="text" name="experience" id="experience" class="form-control" [(ngModel)]="UpdatedUser.experience">
+  
+            <label for="rating" class="form-label">Rating</label>
+            <input type="text" name="rating" id="head"  class="form-control" [(ngModel)]="UpdatedUser.rating">
+  
+           
+  
+          </div>
+          
+            <button type="button" class="btn btn-primary"  (click)="Update(username,UpdatedUser)">Save changes</button>
+          </div>
+        
+  
+  
+ </div>
+  </div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a routerLink="courseread">Courses</a></li>
+
+
+
+
+
+
+
+			 <li><a routerLink="/qr" >course information</a></li>
+			 <!-- <li><a routerLink="/gallery">About</a></li> -->
+          
+           <li><a routerLink="/create">Feedback</a></li> 
+			<!-- <li><a routerLink="/profile" >Profile</a></li>  -->
+
+			<li><a routerLink="/mainlogin">Logout</a></li>
+         </ul>
+      </nav>
+    
+
+<div class="form-group w-50 d-block mx-auto">
+    <label for="Name" class="form-label">UserName:</label>
+    <input type="text" name="Name" id="Name" class="form-control" [(ngModel)]="User.username">
+    <label for="suggestion" class="form-label">suggestion:</label>
+    <input type="text" name="suggestion" id="suggestion" class="form-control" [(ngModel)]="User.suggestion">
+    <label for="quires" class="form-label">quires:</label>
+    <input type="text" name="quires" id="quires" class="form-control" [(ngModel)]="User.quires">
+    <label for="experience" class="form-label">Experience:</label>
+    <input type="text" name="experience" id="experience" class="form-control" [(ngModel)]="User.experience">
+    <label for="rating" class="form-label">Rating</label>
+    <input type="text" name="rating" id="rating" class="form-control" [(ngModel)]="User.rating">
+    <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">
+    <div class="alert alert-success my-2" *ngIf="!(SuccessMsg =='')">{{SuccessMsg}}</div>
+    <div class="alert alert-danger my-2" *ngIf="!(ErrorMsg =='')">{{ErrorMsg}}</div>
+    </div>

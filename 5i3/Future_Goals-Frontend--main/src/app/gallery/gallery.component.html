@@ -1,0 +1,149 @@
+
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a routerLink="/courseread">Courses</a></li>
+
+
+
+
+			 
+
+
+
+
+
+
+			 <li><a routerLink="/qr" >course information</a></li>
+			 <li><a routerLink="/gallery">About</a></li>
+       <li><a routerLink="/contact">contact</a></li>
+			 
+            <li><a routerLink="/create">Feedback</a></li>
+			<li><a routerLink="/profile" >Profile</a></li>
+		
+			<li><a routerLink="/mainlogin">Logout</a></li>
+         </ul>
+      </nav>
+      
+
+     
+<html>
+
+<body>
+  
+
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p>**This project helps people to reflect on their ambitions, interests, qualifications and abilities**</p>
+  <p>in this project we visited a government school and met the headmaster who belongs to that school and later on went to the class of 10th standard and explained them about our project later on we made them to write some pratice tests after 10th...</p>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="assets/pic7.jpeg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="assets/pic2.jpeg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="assets/pic1.jpeg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="assets/pic6.jpeg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 4 seconds
+    }
+    </script>
+    
+</div>
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="assets/pic1.jpeg" alt="Team members" style="width:100%">
+      <div class="container">
+        <h2>Team members</h2>
+        <p class="title">CSP</p>
+        <p>we visited a government school and met the headmaster of the school</p>
+        <p>swarna@gmail.com</p>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="assets/pic2.jpeg" alt="Team members" style="width:100%">
+      <div class="container">
+        <h2>Team members</h2>
+        <p class="title">CSP</p>
+        <p>Explaining the students about their carrier after 10th standard....</p>
+        <p>keerthi@gmail.com</p>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="assets/pic10.jpg" alt="Team members" style="width:100%">
+      <div class="container">
+        <h2>Team members</h2>
+        <p class="title">CSP</p>
+        <p>We approached the teacher who is the class teacher of their class.....</p>
+        <p>teja@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div align="center">
+<h1>to see videos scan QR Code</h1>
+<img src="assets/qrmy.png">
+</div>

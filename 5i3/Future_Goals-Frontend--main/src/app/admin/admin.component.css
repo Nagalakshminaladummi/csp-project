@@ -1,0 +1,22 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    background-color:black;
+  }
+  .container{
+     margin:auto;
+  }
+  button{
+    padding:18px 60px;
+    margin:20px;
+  font-size:1em;
+  font-family:sans-serif;
+  font-weight:bold;
+  cursor:pointer;
+  border:none;
+  }
+  .exam:hover{
+     background-color:purple;
+  }

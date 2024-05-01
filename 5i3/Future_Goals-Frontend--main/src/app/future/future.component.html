@@ -1,0 +1,409 @@
+<a routerLink="/main"><button>BACK</button></a>
+<html>
+<head>
+<style>
+    /* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+	background: #ffffff;
+	font-size:22px;
+	line-height: 32px;
+	color: #ffffff;
+	margin: 0;
+	padding: 0;
+	word-wrap:break-word !important;
+	font-family: 'Open Sans', sans-serif;
+	}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+	color: #FFF;
+}	
+
+h3 {
+	font-size: 30px;
+	line-height: 34px;
+	text-align: center;
+	color: #FFF;
+}
+
+h3 a {
+	color: #FFF;
+}
+
+a {
+	color: #FFF;
+}
+
+h1 {
+	margin-top: 100px;
+	text-align:center;
+	font-size:60px;
+	line-height: 70px;
+	font-family: 'Bree Serif', 'serif';
+	}
+
+#container {
+	margin: 0 auto;
+	max-width: 890px;
+}
+
+p {
+	text-align: center;
+}
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+	margin:0;
+	padding: 0;
+	background-color: #254441;
+}
+
+#logo {
+	display: block;
+	padding: 0 30px;
+	float: left;
+	font-size:20px;
+	line-height: 60px;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+	float: right;
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+	background-color: #254441;
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+nav ul li ul li:hover { background: #000000; }
+
+/* Background color change on Hover */
+nav a:hover { 
+	background-color: #000000; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+	#logo {
+		display: block;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+
+	nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	/* Also hide the  */
+	.toggle + a,
+	.menu {
+		display: none;
+	}
+
+	/* Stylinf the toggle lable */
+	.toggle {
+		display: block;
+		background-color: #254441;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.toggle:hover {
+		background-color: #000000;
+	}
+
+	/* Display Dropdown when clicked on Parent Lable */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+	nav ul ul .toggle,
+	nav ul ul a {
+		padding: 0 40px;
+	}
+
+	nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	nav a:hover,
+ 	nav ul ul ul a {
+		background-color: #000000;
+	}
+  
+	nav ul li ul li .toggle,
+	nav ul ul a,
+  nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	nav ul li ul li .toggle,
+	nav ul ul a {
+		background-color: #212121; 
+	}
+
+	/* Hide Dropdowns by Default */
+	nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+		/* has to be the same number as the "line-height" of "nav a" */
+	}
+		
+	/* Hide menus on hover */
+	nav ul ul li:hover > ul,
+	nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Tier Dropdown */
+	nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	nav ul ul ul li {
+		position: static;
+		/* has to be the same number as the "width" of "nav ul ul li" */ 
+
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
+</style>
+</head>
+<body> 
+<nav>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+  
+<li>
+<!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">class XI and XII</label>
+                    <a >class XI and XII</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a >Science</a>
+                         <ul>
+                            <li><a>mpc</a></li>
+                             <li><a >bipc</a></li>
+</ul>
+
+</li>
+                        <li><a >Arts</a></li>
+                        <li><a>Commerce</a></li>
+                    </ul> 
+
+                </li>
+               
+                <li>
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">Diploma Courses +</label>
+                    <a >Diploma Courses</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a routerLink="/diploma">Diploma in Engineering</a> </li>
+                        <li><a routerLink="/hotel" >Diploma in Hotel Management</a></li>
+                        <li><a routerLink="/journalism">Diploma in Journalism</a></li>
+
+<li><a  routerLink="/photo">Diploma in Photography</a></li>
+<li><a routerLink="/psychology">Diploma in Psychology</a></li>
+
+<li><a routerLink="/marketing" >Diploma in Digitial Marketing</a></li>
+<li><a routerLink="/finearts">Diploma in Fine Arts</a></li>
+
+<li><a routerLink="/fashion">Diploma in Fashion Designing</a></li>
+<li><a routerLink="/graphic">Diploma in Graphic Designing</a></li>
+<li><a routerLink="/dweb" >Development in Web Designing</a></li>
+<li><a routerLink="/dgame" >Diploma in Game Designing</a></li>
+<li><a >Diploma in Bakery & Confectionery</a></li>
+<li><a >Diploma in Food Technology</a></li>
+<li><a >Diploma in Information Technology</a></li>
+<li><a >Diploma in Makeup and Beauty</a></li>
+<li><a >Diploma in Event Management</a></li>
+<li><a >Diploma in Business Management</a></li>
+<li><a >Diploma in Marine Engineering</a></li>
+<li><a >Diploma in Animation</a></li>
+<li><a >Diploma in Textile Designing</a></li>
+<li><a >Diploma in Leather Designing</a></li>
+<li><a >Diploma in Textile Engineering</a></li>
+
+                    </ul> 
+
+                </li>
+<li>
+<!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">Polytechnic Courses+</label>
+                    <a >Polytechnic Courses</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a >Diploma in computer Programmming</a></li>
+                        <li><a >Graduate Certificate in Marketing </a></li>
+                        <li><a >Management</a></li>
+                         <li><a>Diploma in Petroleum Engineering</a></li>
+ <li><a>Diploma in Business Administration </a></li>
+ <li><a>Diploma in Animation,Art & Design</a></li>
+ <li><a>Diploma in Hospitality Management</a></li>
+ <li><a>Diploma in Accounting</a></li>
+ <li><a>Diploma of Early Childhood</a></li>
+ <li><a>Education & Care</a></li>
+                    </ul> 
+
+                </li>
+
+<li>
+<!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">Paramedical Courses+</label>
+                    <a >ParamedicalCourses</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a >Diploma in Hospital Assistance</a></li>
+                        <li><a >Diploma in Rural Healthcare</a></li>
+                        <li><a >pathology Lab Technician</a></li>
+   <li><a >Diploma in Paramedic Nursing Assistants</a></li>
+   <li><a >Diploma in Physiotherapy</a></li>
+   <li><a >Diploma in X-Ray Technology </a></li>
+   <li><a >Diploma in ECG Technology</a></li>
+   <li><a>Diploma in Radiology</a></li>
+   <li><a>Diploma in Dental Mechanics</a></li>
+   <li><a >Diploma in Pharmacy</a></li>
+                    </ul> 
+
+                </li>
+
+                
+<li>
+<!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">ITI Courses+</label>
+                    <a>ITI Courses</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a >Electrician</a></li>
+                        <li><a >Radiology Technician</a></li>
+                        <li><a>Insurance Agent</a></li>
+                        <li><a >Digital Photographer</a></li>
+                        <li><a >Fashion Design & Technology</a></li>
+                        <li><a >Sewining Technology</a></li>
+                        <li><a >Tool and Die Making</a></li>
+                        <li><a >Computer Operator</a></li>
+                        <li><a >Programming Artists</a></li>
+                    </ul> 
+
+                </li>
+               
+<li>
+<!-- First Tier Drop Down -->
+                    
+                    <a >Vocational Courses</a>
+                     </li>
+                  
+ </ul>
+        </nav>
+</body>
+</html>
+
+        

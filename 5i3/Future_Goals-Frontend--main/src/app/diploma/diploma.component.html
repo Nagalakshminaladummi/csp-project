@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a href="#">Courses
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Inter
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a routerLink="/interinsert">insert</a></li>
+						 <li><a routerLink="/interget">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">B.tech
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/btechinsert">insert</a></li>
+					   <li><a routerLink="/btech">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a href="#">PG
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a href="#">insert</a></li>
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				</ul>
+			 </li>
+
+
+
+
+			 <li>
+				<a href="#">Details
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Login
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a href="#">insert</a></li>
+						 <li><a href="#">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">Register
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/registerinsert">insert</a></li>
+					   <li><a routerLink="/registerread">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a href="#">Contact
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a href="#">insert</a></li>
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a routerLink="/feedback">Feedback
+					</a>
+				 </li>
+				</ul>
+			 </li>
+
+
+
+
+
+
+
+			 <li><a href="/future">Course Info</a></li>
+			 <li><a routerLink="/gallery">About</a></li>
+          
+            <li><a routerLink="/main" >Contact</a></li>
+            <li><a routerLink="/create">Feedback</a></li>
+			<li><a routerLink="/profile" >Profile</a></li>
+
+			<li><a routerLink="/main">Logout</a></li>
+         </ul>
+      </nav>
+   
+<body>
+<h2 style="text-align:center; padding-top: -100px;">DIPLOMA COURSES</h2>
+<a  routerLink="/automobile" style="text-decoration:none"><h2>1.Diploma in Automobile Engineering</h2></a>
+<a  routerLink="/cse" style="text-decoration:none"><h2>2.Computer Science & Engineering</h2></a>
+<a  routerLink="/ece" style="text-decoration:none"><h2 style="color:purple">3.Electronic and Communication Engineering (DETCE)</h2></a>
+<a  routerLink="/mech" style="text-decoration:none"><h2 style="color:purple">4.Diploma in Mechnical Engineering</h2></a>
+<a  routerLink="/aero" style="text-decoration:none"> <h2>5.Aeronautical Engineering</h2></a>
+<a  routerLink="/info" style="text-decoration:none"><h2>6. Information Science</h2></a>
+<a  routerLink="/civil" style="text-decoration:none"><h2>7.civil Engineering (DCE)</h2></a>
+<a  routerLink="/eee" style="text-decoration:none"><h2>8.Electrical Engineering (DEE)</h2></a>
+<a  routerLink="/metallurgey" style="text-decoration:none" ><h2>9.Metallurgical Engineering</h2></a>
+<div>
+<div class="box">
+<h3 style="color:red">*** Click on it to know more about course  *** </h3>
+</div></div>
+<router-outlet></router-outlet>

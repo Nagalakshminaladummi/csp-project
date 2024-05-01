@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a href="#">Courses
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Inter
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a routerLink="/interinsert">insert</a></li>
+						 <li><a routerLink="/interget">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">B.tech
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/btechinsert">insert</a></li>
+					   <li><a routerLink="/btechget">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a href="#">PG
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a href="#">insert</a></li>
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				</ul>
+			 </li>
+
+
+
+
+			 <li>
+				<a href="#">Details
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   
+				   <li>
+					<a href="#">Register
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   
+					   <li><a routerLink="/registerread">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a routerLink="/contact">Contact
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+						
+					   <li><a href="#">read</a></li>					
+					</ul>
+				 </li>
+				 <li>
+					<a routerLink="/feedback">Feedback
+					</a>
+				 </li>
+				</ul>
+			 </li>
+			 
+
+
+
+
+
+
+
+			 
+			 <li><a routerLink="/gallery">About</a></li>
+          
+            <!-- <li><a routerLink="/contact" >Contact</a></li> -->
+            <li><a routerLink="/create">Feedback</a></li>
+			<!-- <li><a routerLink="/profile" >Profile</a></li> -->
+
+			<li><a routerLink="/main">Logout</a></li>
+         </ul>
+      </nav>
+   	
+             <div>
+       <div class="row input-container">
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+						<label>Name</label> 
+                        <input type="text" required class="form-control" [(ngModel)]="User.name" />
+                   
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input">
+						<label>Email</label> 
+                        <input type="text" required class="form-control" [(ngModel)]="User.email"/>
+                    
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="styled-input" style="float:right;">
+						<label>Phone Number</label>
+                        <input type="text" required class="form-control" [(ngModel)]="User.phonenumber" />
+                      
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="styled-input wide">
+						<label>Message</label>
+						<input type="text" required class="form-control" [(ngModel)]="User.message" />
+                      
+                    </div>
+                </div>
+                <a routerLink="/main"> <input type="submit" value="send" class="btn btn-success my-2" (click)="Insert()"></a>
+                <div class="alert alert-success my-2" *ngIf="!(SuccessMsg =='')">{{SuccessMsg}}</div>
+                <div class="alert alert-danger my-2" *ngIf="!(ErrorMsg =='')">{{ErrorMsg}}</div>
+                <div class="d-flex justify-content-center">
+                 
+                </div>
+           
+   </div>

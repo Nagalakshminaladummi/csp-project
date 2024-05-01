@@ -1,0 +1,133 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a href="#">Courses
+				<i class="fas fa-caret-down"></i>
+				</a>
+				<ul> 
+				   <li>
+					  <a href="#">Inter
+					  <i class="fas fa-caret-right"></i>
+					  </a>
+					  <ul>
+						 <li><a routerLink="/interinsert">insert</a></li>
+						 <li><a routerLink="/interget">read</a></li>					
+					  </ul>
+				   </li>
+				   <li>
+					<a href="#">B.tech
+					<i class="fas fa-caret-right"></i>
+					</a>
+					<ul>
+					   <li><a routerLink="/btechinsert">insert</a></li>
+					   <li><a routerLink="/btech">read</a></li>					
+					</ul>
+				 </li>
+				 
+				</ul>
+			 </li>
+
+
+
+
+			 
+
+
+
+
+
+
+          <li><a routerLink="/qr" >course information</a></li>
+			 <li><a routerLink="/gallery">About</a></li>
+          
+        
+            <li><a routerLink="/create">Feedback</a></li>
+			<li><a routerLink="/profile" >Profile</a></li>
+
+			<li><a routerLink="/main">Logout</a></li>
+         </ul>
+      </nav>
+   
+
+
+
+
+
+<div class="d-block mx-auto w-50">
+    <label for="coursename">coursename</label>
+    <input type="text" name="coursename" id="coursename" class="form-control" [(ngModel)]="coursename"
+       >
+    <div class="d-flex my-2">
+        <input type="submit" value="Get all" class="btn btn-primary" (click)="Read('All')">
+        <input type="submit" [value]="'Get '+ coursename" class="btn btn-primary mx-1" (click)="Read(coursename)">
+    </div>
+    <p *ngIf="!(Results.length!=0 && GotResult)" class="text-danger">No Result to Show</p>
+</div>
+<table class="table w-50  mx-auto" *ngIf="Results.length!=0 && GotResult">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">coursename</th>
+            <th scope="col">duration</th>
+            <th scope="col">elgibility</th>
+            <th scope="col">fee</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Data of Results">
+            <th scope="row">{{Data[0]}}</th>
+            <th>{{Data[1]}}</th>
+            <th>{{Data[2]}}</th>
+            <th>{{Data[3]}}</th>
+            <td><input type="button" role="button" class="btn btn-danger" value="delete" (click)="Delete(Data[0])">
+            </td>
+            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Read1( Data[0])">
+                    Update
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Values</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="coursename" id="coursename" placeholder="coursename" class="form-control my-1" [(ngModel)]="UpdatedUser.coursename">
+          <input type="text" name="duration" id="duration" placeholder="duration" class="form-control my-1" [(ngModel)]="UpdatedUser.duration">
+          <input type="text" name="elgibility" id="elgibility" placeholder="elgibility" class="form-control my-1" [(ngModel)]="UpdatedUser.elgibility">
+          <input type="text" name="fee" id="coursename" placeholder="fee" class="form-control my-1" [(ngModel)]="UpdatedUser.fee">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="Update(coursename,UpdatedUser)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<router-outlet></router-outlet>

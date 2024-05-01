@@ -1,0 +1,28 @@
+const express = require('express');
+const bodyparser = require('body-parser');
+const cors = require('cors');
+const su = require('./Routes/su');
+//const Login = require('./Routes/Login');
+const Login=require('./Routes/log');
+const register = require('./Routes/register');
+const contact = require('./Routes/contact');
+const inter = require('./Routes/inter');
+const btech=require('./Routes/btech');
+const adminlogin = require('./Routes/adminlogin');
+const adminreg = require('./Routes/adminreg');
+const courses = require('./Routes/courses');
+const app = express();
+app.use(cors());
+app.use(bodyparser.urlencoded({ extended :  true}));
+app.use(bodyparser.json());
+app.use('/su', su);
+app.use('/log', Login);
+app.use('/register', register);
+app.use('/contact', contact);
+app.use('/inter', inter);
+app.use('/btech',btech);
+app.use('/adminlogin', adminlogin);
+app.use('/adminreg', adminreg);
+app.use('/courses', courses);
+
+module.exports = app;

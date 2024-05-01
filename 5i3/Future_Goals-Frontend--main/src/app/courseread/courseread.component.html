@@ -1,0 +1,111 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Dropdown Menu Bar</title>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav>
+        
+         <ul>
+            <li><a class="active"routerLink="/main">Home</a></li>
+
+
+			<li>
+				<a routerLink="/">Courses</a></li>
+			
+
+
+
+
+			 
+
+
+
+
+
+
+          <li><a routerLink="/qr" >course information</a></li>
+			 <!-- <li><a routerLink="/gallery">About</a></li> -->
+          
+        
+            <li><a routerLink="/create">Feedback</a></li>
+			<!-- <li><a routerLink="/profile" >Profile</a></li> -->
+
+			<li><a routerLink="/main">Logout</a></li>
+         </ul>
+      </nav>
+   
+
+
+
+
+
+<div class="d-block mx-auto w-50">
+    <label for="coursename">COURSE NAME</label>
+    <input type="text" name="course_name" id="course_name" class="form-control" [(ngModel)]="course_name"
+       placeholder="search for a course">
+    <div class="d-flex my-2">
+        <!-- <input type="submit" value="Get all" class="btn btn-primary" (click)="Read('All')"> -->
+        <input type="submit" [value]="'search'" class="btn btn-primary mx-1" (click)="Read(course_name)">
+    <!-- <a routerLink="/list"><input type="submit" value="List of courses" class="btn btn-primary mx-1" ></a> -->
+    </div>
+    <p *ngIf="!(Results.length!=0 && GotResult)" class="text-danger">No Result to Show</p>
+</div>
+<table class="table w-50  mx-auto" *ngIf="Results.length!=0 && GotResult">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">course_name</th>
+            <th scope="col">course_elgibility</th>
+            <th scope="col">course_duration</th>
+            
+          
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Data of Results">
+            <th scope="row">{{Data[0]}}</th>
+            <th>{{Data[1]}}</th>
+            <th>{{Data[2]}}</th>
+          
+            <!-- <td><input type="button" role="button" class="btn btn-danger" value="delete" (click)="Delete(Data[0])">
+            </td>
+            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Read1( Data[0])">
+                    Update
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Updated Values</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="course_name" id="course_name" placeholder="course_name" class="form-control my-1" [(ngModel)]="UpdatedUser.course_name">
+          <input type="text" name="course_elgibility" id="course_elgibility" placeholder="course_elgibility" class="form-control my-1" [(ngModel)]="UpdatedUser.course_elgibility">
+
+          <input type="text" name="course_duration" id="course_duration" placeholder="course_duration" class="form-control my-1" [(ngModel)]="UpdatedUser.course_duration">
+          
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" (click)="Update(course_name,UpdatedUser)">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<router-outlet></router-outlet>
